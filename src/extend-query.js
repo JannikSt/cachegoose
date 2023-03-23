@@ -29,12 +29,12 @@ module.exports = function(mongoose, cache) {
             return resolve(cachedResults);
           }
 
-          if (!isLean) {
+          /*if (!isLean) {
             const constructor = mongoose.model(model);
             cachedResults = Array.isArray(cachedResults) ?
               cachedResults.map(hydrateModel(constructor)) :
               hydrateModel(constructor)(cachedResults);
-          }
+          }*/
 
           callback(null, cachedResults);
           return resolve(cachedResults);
@@ -85,8 +85,8 @@ module.exports = function(mongoose, cache) {
   };
 };
 
-function hydrateModel(constructor) {
+/* function hydrateModel(constructor) {
   return (data) => {
     return constructor.hydrate(data);
   };
-}
+}*/
