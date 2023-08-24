@@ -18,8 +18,8 @@ module.exports = function (mongoose, cache) {
     const key = this._key || this.getCacheKey();
     const ttl = this._ttl;
     const isCount = ['count', 'countDocuments', 'estimatedDocumentCount'].includes(this.op);
-    const isLean = this._mongooseOptions.lean;
-    const model = this.model.modelName;
+    // const isLean = this._mongooseOptions.lean;
+    // const model = this.model.modelName;
 
     return new Promise((resolve, reject) => {
       cache.get(key, (err, cachedResults) => {
